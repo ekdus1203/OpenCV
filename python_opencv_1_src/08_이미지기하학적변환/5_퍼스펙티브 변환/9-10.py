@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 
-
+point_list=[]
 src = np.zeros([4, 2], dtype=np.float32)
 idx = 0
 
@@ -16,7 +16,7 @@ def mouse_callback(event, x, y, flags, param):
         idx = idx + 1
 
         print("(%d, %d)" % (x, y))
-
+        point_list.append((x,y))
         cv2.circle(img_color, (x, y), 10, (0, 0, 255), -1)
 
 
